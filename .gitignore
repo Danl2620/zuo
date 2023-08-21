@@ -6,6 +6,18 @@
 
 /build
 
+/main.zuo
+
+Makefile
+_zuo.db
+_zuo_tc.db
+config.log
+config.status
+image_zuo.c
+image_zuo.dep
+to-install/
+to-run/
+
 compiled/
 
 # common backups, autosaves, lock files, OS meta-files
