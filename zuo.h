@@ -58,18 +58,24 @@ ZUO_EXPORT zuo_ext_t *zuo_ext_void();
 ZUO_EXPORT zuo_ext_t *zuo_ext_eof();
 ZUO_EXPORT zuo_ext_t *zuo_ext_empty_hash();
 
-/* Other data constructors and accessors: */
+/* data constructors */
 ZUO_EXPORT zuo_ext_t *zuo_ext_integer(long long i);
-ZUO_EXPORT long long zuo_ext_integer_value(zuo_ext_t *v);
+ZUO_EXPORT zuo_ext_t *zuo_ext_string(const char *str, long long len);
+ZUO_EXPORT zuo_ext_t *zuo_ext_symbol(const char *str);
+
+/* accessors */
 ZUO_EXPORT zuo_ext_t *zuo_ext_cons(zuo_ext_t *car, zuo_ext_t *cdr);
 ZUO_EXPORT zuo_ext_t *zuo_ext_car(zuo_ext_t *obj);
 ZUO_EXPORT zuo_ext_t *zuo_ext_cdr(zuo_ext_t *obj);
-ZUO_EXPORT zuo_ext_t *zuo_ext_string(const char *str, long long len);
-ZUO_EXPORT long long zuo_ext_string_length(zuo_ext_t *str);
-ZUO_EXPORT char *zuo_ext_string_ptr(zuo_ext_t *str);
-ZUO_EXPORT zuo_ext_t *zuo_ext_symbol(const char *str);
 ZUO_EXPORT zuo_ext_t *zuo_ext_hash_ref(zuo_ext_t *ht, zuo_ext_t *key, zuo_ext_t *fail);
 ZUO_EXPORT zuo_ext_t *zuo_ext_hash_set(zuo_ext_t *ht, zuo_ext_t *key, zuo_ext_t *val);
+ZUO_EXPORT zuo_ext_t *zuo_ext_list_ref(zuo_ext_t *lst, zuo_int_t i);
+
+/* convert to native types */
+ZUO_EXPORT long long zuo_ext_integer_value(zuo_ext_t *v);
+ZUO_EXPORT long long zuo_ext_string_length(zuo_ext_t *str);
+ZUO_EXPORT char *zuo_ext_string_ptr(zuo_ext_t *str);
+ZUO_EXPORT BOOL zuo_ext_bool_value(zuo_ext_t *str);
 
 /* To get more functions, use a symbol key to look them up in the
    kernel environment via `zuo_ext_hash_ref` --- but don't try to
