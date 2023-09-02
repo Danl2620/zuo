@@ -8599,7 +8599,7 @@ char *zuo_ext_string_ptr(zuo_ext_t *str) { return ZUO_STRING_PTR(str); }
 zuo_ext_t *zuo_ext_symbol(const char *str) { return zuo_symbol(str); }
 zuo_ext_t *zuo_ext_hash_ref(zuo_ext_t *ht, zuo_ext_t *key, zuo_ext_t *fail) { return zuo_hash_ref(ht, key, fail); }
 zuo_ext_t *zuo_ext_hash_set(zuo_ext_t *ht, zuo_ext_t *key, zuo_ext_t *val) { return zuo_hash_set(ht, key, val); }
-zuo_ext_t *zuo_ext_list_ref(zuo_ext_t *lst, zuo_int_t i) {return zuo_list_ref(lst, zuo_integer(i); }
+zuo_ext_t *zuo_ext_list_ref(zuo_ext_t *lst, int i) {return zuo_list_ref(lst, zuo_integer(i)); }
 
 zuo_ext_t *zuo_ext_kernel_env() { return z.o_top_env; }
 zuo_ext_t *zuo_ext_apply(zuo_ext_t *proc, zuo_ext_t *args)

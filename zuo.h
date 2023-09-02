@@ -14,6 +14,8 @@
 # define ZUO_EXPORT extern
 #endif
 
+#include <stdbool.h>
+
 /* The type `zuo_ext_t*` represents a Zuo value. All values are
    subject to garbage collection or relocation during
    `zuo_eval_module` or a `zuo_ext_apply` of a non-primitive to a
@@ -69,13 +71,13 @@ ZUO_EXPORT zuo_ext_t *zuo_ext_car(zuo_ext_t *obj);
 ZUO_EXPORT zuo_ext_t *zuo_ext_cdr(zuo_ext_t *obj);
 ZUO_EXPORT zuo_ext_t *zuo_ext_hash_ref(zuo_ext_t *ht, zuo_ext_t *key, zuo_ext_t *fail);
 ZUO_EXPORT zuo_ext_t *zuo_ext_hash_set(zuo_ext_t *ht, zuo_ext_t *key, zuo_ext_t *val);
-ZUO_EXPORT zuo_ext_t *zuo_ext_list_ref(zuo_ext_t *lst, zuo_int_t i);
+ZUO_EXPORT zuo_ext_t *zuo_ext_list_ref(zuo_ext_t *lst, int i);
 
 /* convert to native types */
 ZUO_EXPORT long long zuo_ext_integer_value(zuo_ext_t *v);
 ZUO_EXPORT long long zuo_ext_string_length(zuo_ext_t *str);
 ZUO_EXPORT char *zuo_ext_string_ptr(zuo_ext_t *str);
-ZUO_EXPORT BOOL zuo_ext_bool_value(zuo_ext_t *str);
+ZUO_EXPORT bool zuo_ext_bool_value(zuo_ext_t *str);
 
 /* To get more functions, use a symbol key to look them up in the
    kernel environment via `zuo_ext_hash_ref` --- but don't try to
