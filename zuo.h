@@ -64,6 +64,7 @@ ZUO_EXPORT zuo_ext_t *zuo_ext_empty_hash();
 ZUO_EXPORT zuo_ext_t *zuo_ext_integer(long long i);
 ZUO_EXPORT zuo_ext_t *zuo_ext_string(const char *str, long long len);
 ZUO_EXPORT zuo_ext_t *zuo_ext_symbol(const char *str);
+ZUO_EXPORT zuo_ext_t *zuo_make_boolean(bool val);
 
 /* accessors */
 ZUO_EXPORT zuo_ext_t *zuo_ext_cons(zuo_ext_t *car, zuo_ext_t *cdr);
